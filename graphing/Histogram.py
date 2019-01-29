@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
 
+# Creating a simple TUI interface for the command-line. 
 def create_parser():
 	parser = argparse.ArgumentParser(description="This outputs a histogram for a a given csv file containing one quantitative data column.")
 	parser.add_argument("-in", "--input_file", dest="input_file", type=str, nargs=1 , help="Input should be a single column csv file.", required=True)
@@ -18,21 +19,22 @@ def main():
 	input_file = myargs.input_file[0]
 	out_file = myargs.output_file[0]
 
+	# Loading the dataframe. 
 	dataframe = pd.read_table(input_file, sep=",")
 
-	dataframe = pd.read_table('./Single_Values.csv', sep=",")
-
+	# Setting the column factors to a variable.
 	factors = dataframe.columns.tolist()
-	histogram = sns.distplot(dataframe)
 
+	# Creating the histogram on the dataframe using sns.distplot, and adding an x/y label.
+	histogram = sns.distplot(dataframe)
 	histogram.set_ylabel('Frequency')
 	histogram.set_xlabel(factors[0])
 	#histogram.savefig(out_file)
 
+	# Getting the figure from and setting the figure size. Then saving the histogram. 
 	figure = histogram.get_figure()
 	figure.set_size_inches(8,7.5)
 	figure.savefig(out_file)
-
 
 if __name__ == '__main__':
 	main()
