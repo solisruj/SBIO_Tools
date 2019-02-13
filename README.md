@@ -6,4 +6,7 @@ using the pythons seaborn module.
 Contains basic scripts to pull information. 
 
 # Graphing
-Contains basic scripts with textual user interfaces for quick graphing. 
+Contains basic scripts with textual user interfaces for quick graphing.
+
+# Note
+Due to python 2.7 being discontinued in 2020. All programs will be transcribed to python 3. Newer scripts will also be written in python 3. 
