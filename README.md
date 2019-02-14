@@ -2,6 +2,10 @@
 SBIO Tools are simple python bioinformatic tools written by me to either pull simple genome assembly stats or create fast and ready graphs
 using the pythons seaborn module.
 
+# NCBI Genome Download
+Is a script that used NCBI's FTP to download genomic information (e.g. genbank, fasta, faa, etc). Because NCBI is used widely by many
+researchers. It is good to limit downloads or downloading information when their is minimum activity on the site. 
+
 # Scripts
 Contains basic scripts to pull information. 
 
