@@ -9,12 +9,13 @@ researchers. It is good to limit downloads or downloading information when their
 # Scripts
 Contains basic scripts to pull information.
 
-  *Average Nucleotide Identity script requires 
-  
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
+### Average Nucleotide Identity:
+* Requires the NCBI toolkit to be installed (bin is exported to path).
+* Requires makeblastdb.
+* Requires blastn.
+### Extract Sequences:
+* Requires the NCBI toolkit to be installed (bin is exported to path).
+* Requires makeblastdb.
 
 # Graphing
 Contains basic scripts with textual user interfaces for quick graphing.
