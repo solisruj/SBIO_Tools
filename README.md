@@ -21,4 +21,4 @@ Contains basic scripts to pull information.
 Contains basic scripts with textual user interfaces for quick graphing.
 
 # Note
-Due to python 2.7 being discontinued in 2020. All programs will be transcribed to python 3. Newer scripts will also be written in python 3. 
+Due to python 2.7 being discontinued in 2020. All programs will be transcribed to python 3. Newer scripts will also be written in python 3. This shouldn't cause many issues, since there are minor syntax changes.
