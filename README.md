@@ -7,7 +7,14 @@ Is a script that uses NCBI's FTP to download genomic information (e.g. genbank, 
 researchers. It is good to limit downloads or downloading information when their is minimum activity on the site. 
 
 # Scripts
-Contains basic scripts to pull information. 
+Contains basic scripts to pull information.
+
+  *Average Nucleotide Identity script requires 
+  
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
 
 # Graphing
 Contains basic scripts with textual user interfaces for quick graphing.
