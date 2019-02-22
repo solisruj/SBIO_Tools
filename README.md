@@ -16,6 +16,10 @@ Contains basic scripts to pull information.
 ### Extract Sequences:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
+### Average Amino Identity (COMMING SOON):
+* Requires the NCBI toolkit to be installed (bin is exported to path).
+* Requires makeblastdb.
+* Requires blastp.
 
 # Graphing
 Contains basic scripts with textual user interfaces for quick graphing.
