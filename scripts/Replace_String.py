@@ -7,8 +7,8 @@ input_file = sys.argv[1]
 input_map = sys.argv[2]
 output_file = sys.argv[3]
 
-dataframe = pd.read_table('./coverage_summary', sep='\t', header=None)
-map_file = pd.read_table('./map_list.txt', sep="\t", header=None)
+dataframe = pd.read_table(input_file, sep='\t', header=None)
+map_file = pd.read_table(input_map, sep="\t", header=None)
 
 map_dict = {}
 for r in range(len(map_file)):
