@@ -7,6 +7,7 @@ from Bio.SeqRecord import SeqRecord
 from Bio.Alphabet import IUPAC
 from Bio.SeqFeature import SeqFeature, FeatureLocation
 
+# Creates a tui parser for command line use. 
 def create_parser():
 	parser = argparse.ArgumentParser(description="Creates a genbank file from prodigal gff and fasta file. Note: Prodigal outputs a genbank file as well. This was created as an alternative purpose.")
 	parser.add_argument("-gff", "--gff", dest="gff", type=str, nargs=1 , help="Prodigal gff tab deliminated file.", required=True)
@@ -16,6 +17,7 @@ def create_parser():
 	args = parser.parse_args()
 	return args
 
+# This function returns a map file of an input prodigal gff file.
 def map_prodigal_gff(input_file):
 	prodical_map = {}
 	for line in open(input_file, 'r'):
@@ -31,15 +33,18 @@ def map_prodigal_gff(input_file):
 
 def main():
 
+	# Input variables from created parser.
 	myargs = create_parser()
 	prodigal_gff = myargs.gff[0]
 	prodigal_fasta = myargs.fasta[0]
 	ID = myargs.id[0]
 	output = myargs.out[0]
 
+	# Calling the map prodigal gff function and opening the output file for writing.
 	gff_dict = map_prodigal_gff(prodigal_gff)
-
 	output_file = open(output, 'w')
+
+	# Main loop to parse the fasta file. It also creates a genbank record for each contig in the fasta file. 
 	for contig in SeqIO.parse(prodigal_fasta, "fasta"):
 		contig_header = contig.description 
 		sequence_string = str(contig.seq)
@@ -69,8 +74,11 @@ def main():
 				coding_dna = Seq(feature.extract(sequence_string), IUPAC.unambiguous_dna)
 				feature.qualifiers['translation'] = Seq.translate(coding_dna)
 				print Seq.translate(coding_dna)
+
+			# Writing record to ouput genbank. 
 			SeqIO.write(record, output_file, 'genbank')
 		else:
+			# If the contig doesnt have any predicted CDS then it passes it straight to a record.
 			sequence_object = Seq(sequence_string, IUPAC.unambiguous_dna)
 			record = SeqRecord(sequence_object, id=contig_header, name=ID, description=contig_header)
 			SeqIO.write(record, output_file, 'genbank')
