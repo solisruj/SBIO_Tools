@@ -4,7 +4,17 @@
 import os
 import sys
 import subprocess
+import argparse
 import pandas as pd
+
+def create_parser():
+	parser = argparse.ArgumentParser(description="This program returns Average Nucleotide Identity Coverage, Score, and Similarity for a one way blast to STDOUT. Other metrics are \
+			displated as well. They are in the following order: Sum Nucleotide Percent Match, Number of Total Fragments Matched, Query Sequence Match, Reference Sequence Match, \
+			Coverage, Score, and Similarity")
+	parser.add_argument("-q", "--query", dest="query", type=str, nargs=1 , help="Input nucleotide sequence file (.fna/.fasta).", required=True)
+	parser.add_argument("-r", "--reference", dest="reference", type=str, nargs=1, help="Reference nucleotide file (.fna/.fasta).", required=True) 
+	args = parser.parse_args()
+	return args
 
 def concatenate(input):
 	seq = ''
@@ -47,10 +57,10 @@ def remove_files(files_in_cwd):
 			os.remove(file)
 
 def main():
-	query = sys.argv[1]
-	reference = sys.argv[2]
-	#outfile = sys.argv[2]
-	#query = './GCF_000006745.1_ASM674v1_genomic.fna'
+
+	myargs = create_parser()
+	query = myargs.query[0]
+	reference = myargs.reference[0]
 
 	qseq, qlength= concatenate(query)
 	qfragments = fragment(qseq)
@@ -62,31 +72,28 @@ def main():
 
 	make_blast_db = ["makeblastdb", "-in", reference, "-dbtype",  "nucl", "-out", "tmp.ani.reference.db"]
 	subprocess.call(make_blast_db)
-	#blast = ["blastn",  "-query", 'tmp_fragments.fna', "-db", "tmp.reference.db", "-out", "tmp.blast.out",  "-outfmt", '6 qseqid qlen qstart qend sseqid slen sstart send qseq sseq length nident mismatch gaps score bitscore evalue']
 	blast = ["blastn",  "-query", 'tmp.ani.query.fragments.fna', "-db", "tmp.ani.reference.db", "-out", "tmp.ani.blast.out",  "-outfmt", '6 qseqid qlen qstart qend sseqid slen sstart send length nident mismatch gaps score bitscore evalue']
 	subprocess.call(blast)
 
-	blast_output_dataframe = pd.read_table("tmp.ani.blast.out", sep="\t", header=None)
-	blast_output_dataframe = blast_output_dataframe.drop_duplicates(subset=[blast_output_dataframe.columns[0]])
-	#print blast_output_dataframe.head()
-	frag_numbers = float(len(blast_output_dataframe))
-	
-	identity = float(blast_output_dataframe[9].sum())
+	blast_dataframe = pd.read_table("tmp.ani.blast.out", sep="\t", header=None)
+	blast_dataframe = blast_dataframe.drop_duplicates(subset=[blast_dataframe.columns[0]])
 
-	coverage = (identity / rlength ) * 100
+	query_length = 0
+	total_number_of_fragments = 0
+	sum_percent_nucleotide_match = 0
+	for i in range(len(blast_dataframe)):
+		percent_nucleotide_match = float(blast_dataframe.iloc[i::+1, 9].values[0]) / float(blast_dataframe.iloc[i::+1, 8].values[0])
+		if (percent_nucleotide_match > 0.70):
+			sum_percent_nucleotide_match += percent_nucleotide_match
+			query_length += blast_dataframe.iloc[i::+1, 9].values[0]
+			total_number_of_fragments += 1
 
-	fragment_identities = 0
-	for i in range(len(blast_output_dataframe)):
-		#print blast_output_dataframe.iloc[i::+1, 8].values[0], blast_output_dataframe.iloc[i::+1, 9].values[0]
-		frag_identity = float(blast_output_dataframe.iloc[i::+1, 9].values[0]) / float(blast_output_dataframe.iloc[i::+1, 8].values[0])
-		fragment_identities += frag_identity
-
-	score = ((fragment_identities / frag_numbers ) ) * 100
-
+	score = ((sum_percent_nucleotide_match / total_number_of_fragments ) ) * 100
+	coverage = (query_length / rlength ) * 100
 	similarity = coverage * score / 100
 
 	print 
-	print coverage, "\t", score, "\t", similarity
+	print sum_percent_nucleotide_match, "\t", total_number_of_fragments, "\t", query_length, "\t", coverage, "\t", score, "\t", similarity
 	print
 
 	files_in_cwd = os.listdir(os.getcwd())
