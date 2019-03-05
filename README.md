@@ -22,17 +22,16 @@ Contains basic scripts to pull information.
 * Requires tblastn.
 
 ### Additional Scripts:
-DNA_Complementary.py
-DNA_Nucleotide_Counter.py
-DNA_to_RNA.py
-Extract_Fasta_from_Genbank.py
-Extract_Protein_From_Genbank.py
-Fragment_Sequence.py
-Prodigal_gff_fna_to_Genbank.py
-Re_Array.py
-Replace_String.py
-Sort_ANI_Output.py
-
+* DNA_Complementary.py
+* DNA_Nucleotide_Counter.py
+* DNA_to_RNA.py
+* Extract_Fasta_from_Genbank.py
+* Extract_Protein_From_Genbank.py
+* Fragment_Sequence.py
+* Prodigal_gff_fna_to_Genbank.py
+* Re_Array.py
+* Replace_String.py
+* Sort_ANI_Output.py
 
 # Graphing
 Contains basic scripts with textual user interfaces for quick graphing.
@@ -47,4 +46,4 @@ Contains basic scripts with textual user interfaces for quick graphing.
 * Simple_Regression_plot.py
 
 # Note
-Due to python 2.7 being discontinued in 2020. All programs will be transcribed to python 3. Newer scripts will also be written in python 3. This shouldn't cause many issues, since there are minor syntax changes.
+Due to python 2.7 being discontinued in 2020. All programs will be transcribed to python 3. New scripts will also be written in python 3. If not, I will eventually get to them. This shouldn't cause many issues, since there are onyl minor syntax changes.
