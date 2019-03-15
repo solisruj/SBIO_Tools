@@ -13,13 +13,13 @@ Contains basic scripts to pull information.
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires blastn.
-### Extract Sequences:
-* Requires the NCBI toolkit to be installed (bin is exported to path).
-* Requires makeblastdb.
 ### Average Amino Identity:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires tblastn.
+### Extract Sequences:
+* Requires the NCBI toolkit to be installed (bin is exported to path).
+* Requires makeblastdb.
 
 ### Additional Scripts:
 * DNA_Complementary.py
