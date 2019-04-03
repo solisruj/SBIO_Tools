@@ -32,9 +32,9 @@ def map_assembly(assembly_file, map_type):
 			if (len(row) > 12):
 				# Capturing only complete genomes. This can be later changed to an input variable to include other types.
 				#	This step also captures the ftp link and ID type (e.g. GCF, GCA, ASM).
-				if ('Complete Genome' == row[11]):
-					GCF_map[row[17]] = row[19]
-					GCA_map[row[0]] = row[19]
+				if ('Complete Genome' == row[11] or 'Contig' == row[11]):
+					GCF_map[row[0]] = row[19]
+					GCA_map[row[17]] = row[19]
 					ASM_map[row[15]] = row[19]
 					if (map_type == 'species'):
 						if (row[7].split(' ')[0] not in species_map):
@@ -69,37 +69,37 @@ def get_file(ftps, file_type):
 	for i in range(len(ftps)):
 		ftp_path_items = ftps[i].split('/')
 		if (file_type == 'report'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_assembly_report.txt']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_assembly_report.txt']
 		if (file_type == 'stats'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_assembly_stats.txt']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_assembly_stats.txt']
 		if (file_type == 'cds'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_cds_from_genomic.fna.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_cds_from_genomic.fna.gz']
 		if (file_type == 'fcnt'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_feature_count.txt.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_feature_count.txt.gz']
 		if (file_type == 'ftble'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_feature_table.txt.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_feature_table.txt.gz']
 		if (file_type == 'fna'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_genomic.fna.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_genomic.fna.gz']
 		if (file_type == 'gbff'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_genomic.gbff.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_genomic.gbff.gz']
 		if (file_type == 'gff'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_genomic.gff.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_genomic.gff.gz']
 		if (file_type == 'faa'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_protein.faa.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_protein.faa.gz']
 		if (file_type == 'gpff'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_protein.gpff.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_protein.gpff.gz']
 		if (file_type == 'rna'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_rna_from_genomic.fna.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_rna_from_genomic.fna.gz']
 		if (file_type == 'tcds'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_translated_cds.faa.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_translated_cds.faa.gz']
 		if (file_type == 'wgsmaster'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + '_wgsmaster.gbff.gz']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + '_wgsmaster.gbff.gz']
 		if (file_type == 'annotation_hashes'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + 'annotation_hashes.txt']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + 'annotation_hashes.txt']
 		if (file_type == 'assembly_status'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + 'assembly_status.txt']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + 'assembly_status.txt']
 		if (file_type == 'md5checksums'):
-			cmnd = ['wget', '-input', 'genome_file' , ftps[i] + '/' + ftp_path_items[9]  + 'md5checksums.txt']
+			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + 'md5checksums.txt']
 		print "Command Called: ", ' '.join(cmnd)
 		# Try/Except catch to try and get file. Prints error if failed. 
 		try:
