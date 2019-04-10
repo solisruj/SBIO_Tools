@@ -13,6 +13,12 @@ Contains basic scripts to pull information.
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires blastn.
+### Average Nucleotide Identity w/ References (ANIRs):
+* Requires Average Nucleotide Identity to be exported to path.
+* Requires the NCBI toolkit to be installed (bin is exported to path).
+* Requires makeblastdb.
+* Requires blastn.
+* ANIRs folder for exmaple notebook.
 ### Average Amino Identity:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
@@ -22,7 +28,6 @@ Contains basic scripts to pull information.
 ### Extract Sequences:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
-
 ### Additional Scripts:
 * DNA_Complementary.py
 * DNA_Nucleotide_Counter.py
@@ -46,6 +51,3 @@ Contains basic scripts with textual user interfaces for quick graphing.
 * Scatterplot_Matrix.py
 * Scatter_plot.py
 * Simple_Regression_plot.py
-
-# Note
-Due to python 2.7 being discontinued in 2020. All programs will be transcribed to python 3. New scripts will also be written in python 3. If not, I will eventually get to them. This shouldn't cause many issues, since there are onyl minor syntax changes.
