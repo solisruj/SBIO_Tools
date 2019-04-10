@@ -9,7 +9,7 @@ researchers. It is good to limit downloads or downloading information when their
 # Scripts
 Contains basic scripts to pull information.
 
-### Average Nucleotide Identity:
+### Average Nucleotide Identity (Single Run):
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires blastn.
