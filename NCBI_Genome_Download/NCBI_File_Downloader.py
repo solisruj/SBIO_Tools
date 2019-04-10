@@ -10,7 +10,7 @@ import argparse
 # Function to parse command-line arguments.
 def create_parser():
 	parser = argparse.ArgumentParser(description="Downloads NCBI Files in batch to the working directory.")
-	parser.add_argument("-a", "--assembly_file", dest="assembly_file", type=str, nargs=1 , help="This is an NCBI Downloaded assembly file. Use 'wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/assembly_summary.txt' to get the latest file.", required=True)
+	parser.add_argument("-a", "--assembly_file", dest="assembly_file", type=str, nargs=1 , help="This is an NCBI Downloaded assembly file. Use 'wget ftp://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_refseq.txt' to get the latest file.", required=True)
 	parser.add_argument("-i", "--input_file", dest="input_file", type=str, nargs=1, help="A text file List of IDS for download from NCBI.", required=True) 
 	parser.add_argument("-ft", "--file_type", dest="file_type", type=str, nargs=1, help="File type to download options: report, stats, cds, fcnt, ftble, fna, gbff, gff, faa, gpff, rna, tcds, wgsmaster, annotation_hashes, assembly_status, md5checksums", required=True)
 	parser.add_argument("-id", "--id_type", dest="id_type", type=str, nargs=1, help="ID type option: GCF, GCA, ASM, species", required=True) 
@@ -125,7 +125,7 @@ def main():
 		id_type = ['GCF', 'GCA', 'ASM', 'species']
 
 		# Reading in the ID_list and converting it to a list. 
-		ID_list = pd.read_table(file_input, header=None)
+		ID_list = pd.read_csv(file_input, header=None)
 		ID_list = ID_list[0].values.tolist()
 
 		# Mapping the NCBI's assembly information file.
