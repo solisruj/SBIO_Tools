@@ -25,8 +25,8 @@ def main():
 	sns.set(style='whitegrid')
 
 	# Setting the dataframe based on user input and creating the heatmap using seaborns heatmap function.
-	df = pd.read_table(input_file, sep='\t', index_col=0)
-	heatmap = sns.heatmap(df, cmap='YlGnBu', annot=True, annot_kws={'size':6})
+	df = pd.read_csv(input_file, sep='\t', index_col=0)
+	heatmap = sns.heatmap(df, cmap='Blues', annot=True, annot_kws={'size':6})
 
 	# Setting the x and y labels, and rotating the x axis labels. Also setting the title, which is user assigned.
 	heatmap.set_yticklabels(heatmap.get_yticklabels(), rotation = 0, fontsize = 6)
@@ -35,7 +35,7 @@ def main():
 
 	# Passing the figure to a variable to save with savefig().
 	figure = heatmap.get_figure()
-	figure.savefig(out_file, bbox_inches = 'tight')
+	figure.savefig(out_file, dpi=400, bbox_inches = 'tight')
 
 if __name__ == '__main__':
 	main()
