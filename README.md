@@ -19,6 +19,13 @@ Contains basic scripts to pull information.
 * Requires makeblastdb.
 * Requires blastn.
 * ANIRs folder for exmaple notebook.
+### Averge Amino Identity w/ References (AAIRs):
+* Requires Average Amino Identity to be exported to path.
+* Requires the NCBI toolkit to be installed (bin is exported to path).
+* Requires makeblastdb.
+* Requires tblastn.
+* One way tblastn. 
+* (Reciprocal blast comming soon)
 ### Average Amino Identity:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
