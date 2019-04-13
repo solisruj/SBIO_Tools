@@ -12,9 +12,6 @@ https://ijs.microbiologyresearch.org/content/journal/ijsem/10.1099/ijs.0.059774-
 
 **ANI and AAI Equations:**
 
-\begin{equation}
-Coverage = Total Number of Bases Matched / Total Number of Reference Bases
-\end{equation}
 $ \%\ Coverage\ =\ (Total\ Number\ of\ Bases\ Matched\ /\ Total\ Number\ of\ Reference\ Bases)\ /\ 100 $
 
 $ \%\ Score\ =\ (Total\ Percent\ Identity\ /\ Total\ Number\ of\ Fragments)\ /\ 100 $
