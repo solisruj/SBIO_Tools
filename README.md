@@ -1,7 +1,7 @@
 # Simple Bioinformatic Tools (SBIO_Tools)
 SBIO Tools are simple python bioinformatic tools written by me to either pull simple genome assembly stats or create fast and ready graphs using the pythons seaborn module.
 
-# Average Identity:
+# Average Identity
 Is a folder containing a jupyter and markdown notebook that shows how to use average identity scripts. ANI and AAI sub-folders contain example outputs and graphs that can be created with programs found in scripts folder.
 
 # NCBI Genome Download
