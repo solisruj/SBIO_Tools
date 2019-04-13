@@ -12,11 +12,11 @@ https://ijs.microbiologyresearch.org/content/journal/ijsem/10.1099/ijs.0.059774-
 
 **ANI and AAI Equations:**
 
-$$ \%\ Coverage\ =\ (Total\ Number\ of\ Bases\ Matched\ /\ Total\ Number\ of\ Reference\ Bases)\ /\ 100 $$
+$ \%\ Coverage\ =\ (Total\ Number\ of\ Bases\ Matched\ /\ Total\ Number\ of\ Reference\ Bases)\ /\ 100 $
 
-$$ \%\ Score\ =\ (Total\ Percent\ Identity\ /\ Total\ Number\ of\ Fragments)\ /\ 100 $$
+$ \%\ Score\ =\ (Total\ Percent\ Identity\ /\ Total\ Number\ of\ Fragments)\ /\ 100 $
 
-$$ \%\ Similarity\ =\ (Coverage\ *\ Score)\ /\ 100 $$
+$ \%\ Similarity\ =\ (Coverage\ *\ Score)\ /\ 100 $
 
 
 
