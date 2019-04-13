@@ -1,0 +1,6 @@
+query	Vibrio cholerae O1 biovar El Tor str. N1696	Bacillus anthracis str. Sterne	Bacillus subtilis subsp. subtilis str. 168	Vibrio metschnikovii CIP 69.14	Vibrio proteolyticus NBRC 13287
+Vibrio cholerae O1 biovar El Tor str. N1696	99.9999752107 	81.1038939259 	80.3142976731 	84.6490345259 	82.682148307 
+Bacillus anthracis str. Sterne	81.191780561 	100.0 	86.8560080919 	80.468140022 	80.6436866934 
+Bacillus subtilis subsp. subtilis str. 168	80.3129277992 	86.63752146 	100.0 	80.3211772082 	82.2271564104 
+Vibrio metschnikovii CIP 69.14	83.2634950399 	81.8433711522 	81.732750137 	99.9999214229 	83.2123991051 
+Vibrio proteolyticus NBRC 13287	82.4239874508 	82.307334894 	88.2197330823 	82.9991794886 	100.0 
