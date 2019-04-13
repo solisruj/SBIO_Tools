@@ -2,10 +2,11 @@
 
 import pandas as pd 
 import sys
+import os
 
-input_file = sys.argv[1]
-input_map = sys.argv[2]
-output_file = sys.argv[3]
+input_file = os.path.abspath(sys.argv[1])
+input_map = os.path.abspath(sys.argv[2])
+output_file = os.path.abspath(sys.argv[3])
 
 dataframe = pd.read_table(input_file, sep='\t', header=None)
 map_file = pd.read_table(input_map, sep="\t", header=None)
