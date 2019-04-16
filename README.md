@@ -21,7 +21,7 @@ Contains basic scripts to pull information.
 * Requires makeblastdb.
 * Requires blastn.
 * ANIRs folder for exmaple notebook.
-### Average Amino Identity (single):
+### Average Amino Identity (Single Run):
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires blastp.
