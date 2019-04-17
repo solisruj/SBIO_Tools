@@ -12,7 +12,7 @@ https://ijs.microbiologyresearch.org/content/journal/ijsem/10.1099/ijs.0.059774-
 
 **ANI and AAI Equations:**
 
-![equation](https://latex.codecogs.com/gif.latex?%5C%25%20Coverage%20%3D%20%5C%28Total%20Number%20Of%20Bases%20Matched/Total%20Number%20Of%20Reference%20Bases%29%20%5C*%20100)
+![equation](https://latex.codecogs.com/gif.latex?%5C%25%20Coverage%20%3D%20%5C%28Total%20Bases%20Matched/Reference%20Length%29*%20100)
 
 $ \%\ Score\ =\ (Total\ Percent\ Identity\ /\ Total\ Number\ of\ Fragments)\ /\ 100 $
 
