@@ -39,14 +39,16 @@ def sort_frame(df_cov, df_score, outFile):
 		for r in range(1,len(df_cov)):
 			cov_dict = {}
 			scor_dict = {}
-			acsn = str(df_cov.iloc[r:r+1,0].values[0]+"\tCoverage\tScore\n")
+			acsn = str(df_cov.iloc[r:r+1,0].values[0]+"\tRank\tCoverage\tScore\tSimilarity\n")
 			out_file.write(acsn)
 			for c in range(1,len(df_cov.columns)):
-				cov_dict[df_cov.iloc[0:1,c].values[0]] = df_cov.iloc[r:r+1,c].values[0]
-				scor_dict[df_score.iloc[0:1,c].values[0]] = df_score.iloc[r:r+1,c].values[0]
+				cov_dict[df_cov.iloc[0:1,c].values[0]] = float(df_cov.iloc[r:r+1,c].values[0])
+				scor_dict[df_score.iloc[0:1,c].values[0]] = float(df_score.iloc[r:r+1,c].values[0])
 			sorted_dict = sorted(cov_dict, key=lambda x: cov_dict[x], reverse=True)
+			count = 0
 			for key in sorted_dict:
-				line = str("{}\t{}".format(key, cov_dict[key])+"\t"+scor_dict[key]+"\n")
+				count += 1
+				line = str(key) +"\t"+str(count)+"\t"+str(round(cov_dict[key],2))+"\t"+str(round(scor_dict[key],2))+"\t"+str(round((cov_dict[key]*scor_dict[key])/100,2))+"\n"
 				out_file.write(line)
 			out_file.write("\n")
 
@@ -58,9 +60,9 @@ def main():
 	file_scor = myargs.score_file[0]
 	file_out = myargs.out_file[0]
 	#print file_map, file_cov, file_scor, file_out
-	mpfle = pd.read_table(file_map, header=None)
-	coverage = pd.read_table(file_cov, header=None, sep="\t")
-	score = pd.read_table(file_scor, header=None, sep="\t")
+	mpfle = pd.read_csv(file_map, header=None,sep='\t')
+	coverage = pd.read_csv(file_cov, header=None, sep='\t')
+	score = pd.read_csv(file_scor, header=None, sep='\t')
 	mapped = map_file(mpfle)
 	cov = strain_to_taxonomy(coverage, mapped)
 	scor = strain_to_taxonomy(score, mapped)
