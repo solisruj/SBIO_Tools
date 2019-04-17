@@ -16,8 +16,7 @@ https://ijs.microbiologyresearch.org/content/journal/ijsem/10.1099/ijs.0.059774-
 
 ![equation](https://latex.codecogs.com/gif.latex?%5C%25%20Score%20%3D%28TotalPercentIdentity/TotalNumberOf%20Fragments%29%20*%20100)
 
-$ \%\ Similarity\ =\ (Coverage\ *\ Score)\ /\ 100 $
-
+![equation](https://latex.codecogs.com/gif.latex?%5C%25%20Similarity%20%3D%20%28Coverage%20*%20Score%29%20/%20100)
 
 
 #### Average Nucleotide Identity (ANI) Command:
