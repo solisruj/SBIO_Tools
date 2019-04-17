@@ -118,3 +118,15 @@ Dendogram.py -in aai_similarity.tsv -out aai_similarity.dm.png
 ```
 
 <img src="AAI/aai_similarity.dm.png" style="height:500px"></img>
+
+#### Ranking Average Identity Output for ANI or AAI
+
+```python
+Sort_Average_Identity_Output.py -mp bacteria_map.tsv -c ani_coverage.tsv -s ani_score.tsv -o ani_ranked.tsv
+```
+
+```python
+Sort_Average_Identity_Output.py -mp bacteria_map.tsv -c aai_coverage.tsv -s aai_score.tsv -o aai_ranked.tsv
+```
+
+
