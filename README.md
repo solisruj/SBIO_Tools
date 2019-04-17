@@ -47,7 +47,7 @@ Contains basic scripts to pull information.
 * Prodigal_gff_fna_to_Genbank.py
 * Re_Array.py
 * Replace_String.py
-* Sort_ANI_Output.py
+* Sort_Average_Identity_Output.py
 
 # Graphing
 Contains basic scripts with textual user interfaces for quick graphing.
