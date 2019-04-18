@@ -46,7 +46,7 @@ def main():
 
 	files_in_cwd = os.listdir(os.getcwd())
 	top_seq = get_top_seq_hit()
-	formated_seq = Formatting_to_Fasta(top_seq)
+	formated_seq = Formatting_to_Fasta(top_seq.replace('-', ''))
 	remove_files(files_in_cwd)
 	write_out_file(formated_seq, outfile, query)
 
