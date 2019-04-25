@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import seaborn as sns
 import pandas as pd
@@ -34,8 +34,7 @@ def main():
 	dataframe = dataframe.set_index(model_factor)
 	del dataframe.index.name
  
- 	if (plot_type == 'default'):
-		# Default plot
+	if(plot_type == 'default'):
 		dendogram = sns.clustermap(dataframe, cmap="mako")
 	elif (plot_type == 'standardize'):
 		dendogram = sns.clustermap(dataframe, robust=False, standard_scale=1, cmap="mako")
