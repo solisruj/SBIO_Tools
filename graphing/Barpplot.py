@@ -24,7 +24,7 @@ def main():
 	out_file = myargs.output_file[0]
 
 	# Loading the dataframe, factor names, and labels. 
-	dataframe = pd.read_table(input_file, sep="\t")
+	dataframe = pd.read_csv(input_file, sep='\t')
 	factors = dataframe.columns.tolist()
 	labels = dataframe[factors[0]].tolist()
 
