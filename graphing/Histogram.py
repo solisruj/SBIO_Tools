@@ -19,8 +19,10 @@ def main():
 	input_file = myargs.input_file[0]
 	out_file = myargs.output_file[0]
 
+	sns.set(color_codes=True)
+
 	# Loading the dataframe. 
-	dataframe = pd.read_table(input_file, sep=",")
+	dataframe = pd.read_csv(input_file, sep='\t')
 
 	# Setting the column factors to a variable.
 	factors = dataframe.columns.tolist()
@@ -34,7 +36,7 @@ def main():
 	# Getting the figure from and setting the figure size. Then saving the histogram. 
 	figure = histogram.get_figure()
 	figure.set_size_inches(8,7.5)
-	figure.savefig(out_file)
+	figure.savefig(out_file, dpi=300, bbox_inches = 'tight')
 
 if __name__ == '__main__':
 	main()
