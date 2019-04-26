@@ -42,5 +42,5 @@ delta-filter -r -q <reference query delta file> > <reference query filter file>
 
 ```python
 # Reporting polymorphisms contained in a delta encoded alignment file.
-show-snps -Clr <reference query filter file> > <reference query .snps>
+show-snps -TClr -x 1 <reference query filter file> > <reference query .snps>
 ```
