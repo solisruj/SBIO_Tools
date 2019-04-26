@@ -1,11 +1,15 @@
 # Simple Bioinformatic Tools (SBIO_Tools)
 SBIO Tools are simple python bioinformatic scripts and notebooks written by me to perform simple bioinformatic analysis. Links references will be provided for external programs, and material used to either pull simple genome assembly stats or create fast and ready graphs using the pythons seaborn module.
 
-# 16s
+# Notebooks
+Contains markdown, jupyter notebooks, and additional files to conduct a simple pipeline.
+
+### 16s
 Is a folder containing a markdown notebook that shows how to align extracted 16s rRNA sequences and build a simple tree for the sequences.
 
-# Average Identity
+### Average Identity
 Is a folder containing a jupyter and markdown notebook that shows how to use average identity scripts for nucleotide and amino acids. ANI and AAI sub-folders contain example outputs and graphs that can be created with programs found in scripts folder.
+
 
 # NCBI Genome Download
 Is a script that uses NCBI's FTP to download genomic information (e.g. genbank, fasta, faa, etc). Because NCBI is used widely by many
