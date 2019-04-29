@@ -1,8 +1,17 @@
-#!/usr/bin/python 
+#!/usr/bin/env python3 
 
+import argparse
 import sys
 import subprocess
 import os
+
+def create_parser():
+	parser = argparse.ArgumentParser(description="This program extracts the hight similar sequence found in a reference that matches the query.")
+	parser.add_argument("-q", dest="query", type=str, nargs=1 , help="Input query file.", required=True)
+	parser.add_argument("-r", dest="reference", type=str, nargs=1 , help="Reference file.", required=True)
+	parser.add_argument("-o", dest="output", type=str, nargs=1, help="Name of the output filename.", required=True) 
+	args = parser.parse_args()
+	return args
 
 def remove_files(files_in_cwd):
 	for file in files_in_cwd:
@@ -35,9 +44,11 @@ def write_out_file(sequence, outfile, query):
 		output.write(line)
 
 def main():
-	query = sys.argv[1]
-	reference = sys.argv[2]
-	outfile = sys.argv[3]
+
+	myargs = create_parser()
+	query = myargs.query[0]
+	reference = myargs.reference[0]
+	outfile = myargs.output[0]
 
 	make_blast_db = ["makeblastdb", "-in", reference, "-dbtype",  "nucl", "-out", "tmp.reference.db"]
 	subprocess.call(make_blast_db)

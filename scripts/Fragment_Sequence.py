@@ -1,6 +1,14 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
+import argparse
 import sys
+
+def create_parser():
+	parser = argparse.ArgumentParser(description="This fragments a nucleotide sequence to 1000 base seuqnces.")
+	parser.add_argument("-in", dest="input", type=str, nargs=1 , help="Input query file.", required=True)
+	parser.add_argument("-out", dest="output", type=str, nargs=1, help="Name of the output filename.", required=True) 
+	args = parser.parse_args()
+	return args
 
 def concatenate(input):
 	seq = ''
@@ -24,9 +32,11 @@ def fragment(seq):
 	return fragments
 
 def main():
-	query = sys.argv[1]
+
+	myargs = create_parser()
+	query = myargs.input[0]
 	#reference = sys.argv[2]
-	outfile = sys.argv[2]
+	outfile = myargs.output[0]
 
 	#query = './GCF_000006745.1_ASM674v1_genomic.fna'
 	seq = concatenate(query)

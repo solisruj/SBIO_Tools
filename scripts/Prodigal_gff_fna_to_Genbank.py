@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys, os, argparse
 from Bio import GenBank, SeqIO
@@ -56,7 +56,7 @@ def main():
 			# Adding Annotations.
 			for CDS in gff_dict[contig_header]:
 				info = CDS[7].split(';')
-				print ">" + contig_header, CDS[2], CDS[3]
+				print (">" + contig_header, CDS[2], CDS[3])
 				feature = SeqFeature(FeatureLocation(start=int(CDS[2]), end=int(CDS[3])), type=CDS[1])
 				record.features.append(feature)
 				feature.qualifiers['genename'] = ""
@@ -73,7 +73,7 @@ def main():
 				feature.qualifiers['note'] = CDS[0] + " prediction with score of " + CDS[4]
 				coding_dna = Seq(feature.extract(sequence_string), IUPAC.unambiguous_dna)
 				feature.qualifiers['translation'] = Seq.translate(coding_dna)
-				print Seq.translate(coding_dna)
+				print (Seq.translate(coding_dna))
 
 			# Writing record to ouput genbank. 
 			SeqIO.write(record, output_file, 'genbank')

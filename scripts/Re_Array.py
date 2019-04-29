@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 # This is a crude re-array program that needs to be written. 
 
@@ -9,13 +9,13 @@ import sys
 import os
 
 Input_CSV = sys.argv[1]
-Number_Plates = sys.argv[2]
+NP = sys.argv[2]
 Destination_Plate = sys.argv[3]
 
-Input_CSV = "candidate_problem_1_input.csv"
+#Input_CSV = "candidate_problem_1_input.csv"
 # I minus one here from Number_plates to match the number of input plates that tubes are being pulled from to match RI-1 and RI2 configurations. 
-Number_Plates = (6)-1
-Destination_Plate = "SA00507956"
+Number_Plates = (int(Np))-1
+#Destination_Plate = "SA00507956"
 
 data_file = pd.read_table(Input_CSV, sep=",")
 

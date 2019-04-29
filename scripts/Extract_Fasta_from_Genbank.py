@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-
+#!/usr/bin/env python3
 
 import sys, os
 from Bio import GenBank, SeqIO
@@ -15,13 +14,13 @@ input_handle  = open(gbk_filename, "r")
 output_handle = open(faa_filename, "w")
 
 for seq_record in SeqIO.parse(input_handle, "genbank") :
-    print "Dealing with GenBank record %s" % seq_record.id
-    #print ">" + seq_record.id + "|" + seq_record.description
-    #print seq_record.seq
-    output_handle.write(">" + seq_record.id + "|" + seq_record.description + '\n')
-    for n in range(0,len(seq_record.seq), 70):
+	print ("Dealing with GenBank record %s" % seq_record.id)
+	#print ">" + seq_record.id + "|" + seq_record.description
+	#print seq_record.seq
+	output_handle.write(">" + seq_record.id + "|" + seq_record.description + '\n')
+	for n in range(0,len(seq_record.seq), 70):
 		output_handle.write(str(seq_record.seq[n:n+70])+"\n")
 
 output_handle.close()
 input_handle.close()
-print "Done"
+print ("Done")
