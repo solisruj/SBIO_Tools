@@ -1,10 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import seaborn as sns
 import pandas as pd
 import argparse
 import matplotlib.pyplot as plt
-
 
 def create_parser():
 	parser = argparse.ArgumentParser(description="This outputs a hexbin plot for a a given tab deliminated data text file.")
@@ -12,8 +11,6 @@ def create_parser():
 	parser.add_argument("-out", "--output_file", dest="output_file", type=str, nargs=1, help="Name of the output image file.", required=True) 
 	args = parser.parse_args()
 	return args
-
-
 
 def main():
 
