@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import pandas as pd
 import re
@@ -58,8 +58,8 @@ def get_ftps(id_list, map_dict):
 	ftps = []
 	for ID in id_list:
 		if (ID not in map_dict.keys()):
-			print "Error: "+ ID + " ID might not be in the NCBI assembly list file. Download new assembly information file."
-			print "Use 'wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/assembly_summary.txt' to get a more recent file."
+			print("Error: "+ ID + " ID might not be in the NCBI assembly list file. Download new assembly information file.")
+			print("Use 'wget ftp://ftp.ncbi.nlm.nih.gov/genomes/genbank/bacteria/assembly_summary.txt' to get a more recent file.")
 		elif (ID in map_dict.keys()):
 			ftps.append(map_dict[ID])
 	return ftps
@@ -100,13 +100,13 @@ def get_file(ftps, file_type):
 			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + 'assembly_status.txt']
 		if (file_type == 'md5checksums'):
 			cmnd = ['wget', ftps[i] + '/' + ftp_path_items[9]  + 'md5checksums.txt']
-		print "Command Called: ", ' '.join(cmnd)
+		print ("Command Called: ", ' '.join(cmnd))
 		# Try/Except catch to try and get file. Prints error if failed. 
 		try:
 			subprocess.call(cmnd)
-			print ftp_path_items[9] + " Downloaded"
+			print (ftp_path_items[9] + " Downloaded")
 		except:
-			print "Error: " + ftp_path_items[9] + " Download Failed"
+			print ("Error: " + ftp_path_items[9] + " Download Failed")
 
 def main():
 		# Getting command-line arguments. 
@@ -132,8 +132,8 @@ def main():
 		if (id_option in id_type):
 			map_dictionary = map_assembly(assembly_file, id_option)
 		else:
-			print "Error: ", id_option, "is not a valid file type option"
-			print "For help see menu: NCBI_File_Downloader.py -h"
+			print ("Error: ", id_option, "is not a valid file type option")
+			print ("For help see menu: NCBI_File_Downloader.py -h")
 		
 		# Getting the a list of NCBI ftp core link.
 		ftp_list = get_ftps(ID_list, map_dictionary)
@@ -142,10 +142,10 @@ def main():
 		if (option in file_options):
 			get_file(ftp_list, option)
 		else:
-			print "Error: ", option, "is not a valid file type option"
-			print "For help see menu: NCBI_File_Downloader.py -h"
+			print ("Error: ", option, "is not a valid file type option")
+			print ("For help see menu: NCBI_File_Downloader.py -h")
 
-		print "Downloads Completed"
+		print ("Downloads Completed")
 
 if __name__ == '__main__':
 	main()
