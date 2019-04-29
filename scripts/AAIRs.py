@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python3 
 import os
 import sys
 import subprocess
@@ -31,7 +31,7 @@ def main():
 			ani_out = subprocess.check_output(ani_cmnd)
 
 
-			print ani_out.split('\n')
+			#print ani_out.split('\n')
 
 
 			ani_content = ani_out.split('\n')[-3].split("\t")

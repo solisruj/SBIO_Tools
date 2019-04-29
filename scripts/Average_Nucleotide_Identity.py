@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import sys
@@ -91,9 +91,9 @@ def main():
 	coverage = (query_length / rlength ) * 100
 	similarity = coverage * score / 100
 
-	print 
-	print sum_percent_nucleotide_match, "\t", total_number_of_fragments, "\t", query_length, "\t", rlength, "\t", coverage, "\t", score, "\t", similarity
-	print
+	print() 
+	print(sum_percent_nucleotide_match, "\t", total_number_of_fragments, "\t", query_length, "\t", rlength, "\t", coverage, "\t", score, "\t", similarity)
+	print()
 
 	files_in_cwd = os.listdir(os.getcwd())
 	remove_files(files_in_cwd)
