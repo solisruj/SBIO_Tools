@@ -44,3 +44,12 @@ delta-filter -r -q <reference query delta file> > <reference query filter file>
 # Reporting polymorphisms contained in a delta encoded alignment file.
 show-snps -TClr -x 1 <reference query filter file> > <reference query .snps>
 ```
+
+
+#### MUMmer SNP to VCF Format:
+
+
+```python
+# Converting to VCF format.
+MUMmer_SNPs_to_VCF_format.py -in <MUMmer SNPs file> -out <Ouput VCF filename>
+```
