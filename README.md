@@ -59,6 +59,7 @@ Contains basic scripts to pull information.
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 ### Additional Scripts:
+* Aligner.py
 * DNA_Complementary.py
 * DNA_Nucleotide_Counter.py
 * DNA_to_RNA.py
