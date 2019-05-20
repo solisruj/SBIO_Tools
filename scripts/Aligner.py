@@ -100,14 +100,5 @@ def main():
 		print(reads[n+1][0], '| length=',aln_info[1])
 		print(aln_info[-1])
 
-'''
-	seq_1 = 'ACGGTAG'
-	seq_2 = 'CCTAAG'
-
-
-	aln_info = global_alignment(seq_1, seq_2)
-
-	print(aln_info[-2],"\n",aln_info[-1], aln_info[0],"\n",aln_info[1])
-'''
-
-main()
+if __name__ == '__main__':
+	main()
