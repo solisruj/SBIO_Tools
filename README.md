@@ -70,3 +70,4 @@ Contains basic scripts to pull information.
 * Re_Array.py
 * Replace_String.py
 * Sort_Average_Identity_Output.py
+* Sequence_Comarisons.py
