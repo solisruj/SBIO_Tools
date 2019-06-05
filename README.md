@@ -58,6 +58,12 @@ Contains basic scripts to pull information.
 ### Extract Sequences:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
+### Read Quality
+* Requires a read dataset (binned or not.)
+* Returns nucleotide frequency, N mode, left/right most N in a text file.
+* Returns Average Base Quality Bar Chart.
+* Returns GC frequncy line graph.
+
 ### Additional Scripts:
 * Aligner.py
 * DNA_Complementary.py
