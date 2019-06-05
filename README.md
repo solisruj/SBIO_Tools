@@ -53,7 +53,8 @@ Contains basic scripts to pull information.
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires tblastp.
-* One way blast. 
+* One way blast.
+* AAIRs folder for exmaple notebook.
 * (Reciprocal blast comming soon)
 ### Extract Sequences:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
