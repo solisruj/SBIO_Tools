@@ -53,12 +53,20 @@ Contains basic scripts to pull information.
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
 * Requires tblastp.
-* One way blast. 
+* One way blast.
+* AAIRs folder for exmaple notebook.
 * (Reciprocal blast comming soon)
 ### Extract Sequences:
 * Requires the NCBI toolkit to be installed (bin is exported to path).
 * Requires makeblastdb.
+### Read Quality
+* Requires a read dataset (binned or not.)
+* Returns nucleotide frequency, N mode, left/right most N in a text file.
+* Returns Average Base Quality Bar Chart.
+* Returns GC frequncy line graph.
+
 ### Additional Scripts:
+* Aligner.py
 * DNA_Complementary.py
 * DNA_Nucleotide_Counter.py
 * DNA_to_RNA.py
@@ -69,3 +77,4 @@ Contains basic scripts to pull information.
 * Re_Array.py
 * Replace_String.py
 * Sort_Average_Identity_Output.py
+* Sequence_Comarisons.py
