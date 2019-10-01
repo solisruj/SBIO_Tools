@@ -50,7 +50,7 @@ def DNA_to_Complementary(sequences_dict, outfile):
 # Formats a string into a list of sequence of length 70, and returns the list.
 def Formatting_to_Fasta(seq):
 	sequence_fasta_format = []
-	for n in xrange(0,len(seq), 70):
+	for n in range(0,len(seq), 70):
 		line = str(seq[n:n+70])+"\n"
 		sequence_fasta_format.append(line)
 	return sequence_fasta_format
