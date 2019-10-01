@@ -40,7 +40,7 @@ def sequence_summary(sequence_dictionary, outfile):
 		freq_Guanine = sequence_dictionary[header].count('G')
 		ratio_purine = float(freq_Adenine + freq_Thymine) / float(length)
 		ratio_pyrimidine = float(freq_Cytosine + freq_Guanine) / float(length)
-		seq_stat = header+"\t"+str(freq_Adenine)+"\t"+str(freq_Cytosine)+"\t"+str(freq_Guanine)+"\t"+str(freq_Thymine)+"\t"+str(length)+"\t"+str(round(ratio_purine,8))+"\t"+str(round(ratio_pyrimidine,8))+"\n"
+		seq_stat = header+"\t"+str(freq_Adenine)+"\t"+str(freq_Cytosine)+"\t"+str(freq_Guanine)+"\t"+str(freq_Thymine)+"\t"+str(length)+"\t"+str(round(ratio_purine*100,6))+"\t"+str(round(ratio_pyrimidine*100,6))+"\n"
 		output_file.write(seq_stat)
 		stat_information = freq_Adenine, freq_Cytosine, freq_Guanine, freq_Thymine, length
 		total_assembly_summary.append(stat_information)
@@ -52,7 +52,7 @@ def sequence_summary(sequence_dictionary, outfile):
 	total_ratio_pyrimidine = float(total_assembly_stat[2] + total_assembly_stat[3]) / float(total_assembly_stat[4])
 	output_file.write('\n')
 	output_file.write("Total_Freq_Adenine\tTotal_Freq_Cytosine\tTotal_Freq_Guanine\tTotal_Freq_Thymine\tTotal_Length\tTotal_A/T_Ratio\tTotal_G/C_Ratio\n")
-	total_seq_stats = str(total_assembly_stat[0])+"\t"+str(total_assembly_stat[1])+"\t"+str(total_assembly_stat[2])+"\t"+str(total_assembly_stat[3])+"\t"+str(total_assembly_stat[4])+"\t"+str(round(total_ratio_purine,8))+"\t"+str(round(total_ratio_pyrimidine,8))+"\n"
+	total_seq_stats = str(total_assembly_stat[0])+"\t"+str(total_assembly_stat[1])+"\t"+str(total_assembly_stat[2])+"\t"+str(total_assembly_stat[3])+"\t"+str(total_assembly_stat[4])+"\t"+str(round(total_ratio_purine*100,6))+"\t"+str(round(total_ratio_pyrimidine*100,6))+"\n"
 	output_file.write(total_seq_stats)
 	output_file.close()
 
