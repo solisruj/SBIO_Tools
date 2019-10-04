@@ -31,7 +31,7 @@ def transcribe_DNA_to_RNA(file_name, outfile):
 # This fucntion formats a sequence into a list of line sequences 70 bases long.
 def Formatting_to_Fasta(seq):
 	sequence_fasta_format = []
-	for n in xrange(0,len(seq), 70):
+	for n in range(0,len(seq), 70):
 		line = str(seq[n:n+70])+"\n"
 		sequence_fasta_format.append(line)
 	return sequence_fasta_format
