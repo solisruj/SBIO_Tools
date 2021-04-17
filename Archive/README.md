@@ -1,4 +1,4 @@
-# Simple Bioinformatic Tools (SBIO_Tools)
+# Simple Bioinformatic Tools (SBIO_Tools) Archived
 SBIO Tools are simple python bioinformatic scripts and notebooks written by me to perform simple bioinformatic analysis. Links references will be provided for external programs, and material used to either pull simple genome assembly stats or create fast and ready graphs using the pythons seaborn module.
 
 # Graphing
